@@ -1,0 +1,110 @@
+Ramsey
+
+#include <kipr/wombat.h>
+int counter=986;
+int main()
+    
+{
+    printf("Hello World\n");
+    
+    enable_servos();
+    
+    ao();
+    msleep(7000);
+   
+    claw_up();
+    claw_closed();
+    
+    slider();
+    msleep(2400);
+    
+    claw_down();
+    
+    set_servo_position(1,1337);
+    
+    ao();
+    msleep(100);
+    
+    drive();
+    msleep(1900);
+    
+    back();
+    msleep(300);
+    
+    set_servo_position(1,1400);
+    msleep(1);
+    
+    drive();
+    msleep(1000);
+    
+    set_servo_position(1,881);
+    
+    ao();
+    msleep(100);
+    
+    claw_up();
+    
+    motor(0,-100);
+    motor(3,100);
+    msleep(1000);
+    
+    drive();
+    msleep(1000);
+    
+    motor(0,-100);
+    motor(3,100);
+    msleep(500);
+    
+    slidel();
+    msleep(300);
+    
+    set_servo_position(0,1188);
+    
+    ao();
+    msleep(100);
+    
+claw_open();
+    
+    return 0;
+}
+geo
+
+#include <kipr/wombat.h>
+#include "lib.h"
+int main()
+{
+    printf("Hello World\n");
+    enable_servos();
+   claws_start ();
+    
+    ao();
+    msleep(2000);
+    
+    begin_claw();//start
+    r();
+    msleep(150);
+    
+    f ();
+    msleep(4000);
+    
+    r ();
+    msleep(100);
+ao();
+    msleep(100);
+    
+ 	grab_both (); //hotdog +cup
+    
+    b ();
+    msleep(2000);
+    
+    r ();
+    msleep(2000);
+    
+     ao();
+    msleep(100);
+    
+    let_go_low ();
+    
+    disable_servos();
+    return 0;
+}
